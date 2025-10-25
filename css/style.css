@@ -1,6 +1,8 @@
 /********** Template CSS **********/
 
+
 /*** Spinner ***/
+
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -22,7 +24,9 @@
     z-index: 99;
 }
 
+
 /*** Button ***/
+
 .btn {
     transition: .5s;
 }
@@ -54,6 +58,7 @@
 
 
 /*** Navbar ***/
+
 .sticky-top {
     top: -150px;
     transition: .5s;
@@ -93,7 +98,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-left: 0;
         padding: 10px 0;
     }
@@ -109,7 +114,6 @@
         visibility: hidden;
         transition: .5s;
     }
-
     .navbar .nav-item:hover .dropdown-menu {
         top: 100%;
         visibility: visible;
@@ -120,6 +124,7 @@
 
 
 /*** Hero Header ***/
+
 .hero-header {
     margin-top: -100px;
     padding-top: 150px;
@@ -175,6 +180,7 @@
 
 
 /*** About ***/
+
 .about-img {
     position: relative;
     overflow: hidden;
@@ -193,14 +199,15 @@
 
 
 /*** Project ***/
+
 .project-item img {
     transition: .5s;
 }
-  
+
 .project-item:hover img {
     transform: scale(1.2);
 }
-  
+
 .project-overlay {
     position: absolute;
     padding: 25px;
@@ -218,6 +225,7 @@
 
 
 /*** Service ***/
+
 .service-item {
     position: relative;
     padding: 30px 25px;
@@ -250,7 +258,6 @@
     color: var(--bs-light);
 }
 
-
 .service-item .service-img h3 {
     position: absolute;
     top: 0;
@@ -282,14 +289,19 @@
 
 
 /*** Our Team ***/
+
 .team-item img {
     transition: .5s;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
-  
+
 .team-item:hover img {
     transform: scale(1.2);
 }
-  
+
 .team-overlay {
     position: absolute;
     padding: 30px;
@@ -314,6 +326,7 @@
 
 
 /*** Testimonial ***/
+
 .testimonial-img {
     position: relative;
     padding: 45px 0 45px 90px;
@@ -375,7 +388,6 @@
         left: 0;
         right: auto;
     }
-
     .testimonial-carousel .owl-dot {
         margin-right: 10px;
         margin-left: 0;
@@ -384,6 +396,7 @@
 
 
 /*** Newsletter ***/
+
 .newsletter {
     background: url(../img/hero-bg.jpg) bottom right no-repeat;
     background-size: cover;
@@ -393,32 +406,32 @@
     .newsletter .container {
         max-width: 100% !important;
     }
-
-    .newsletter .newsletter-text  {
+    .newsletter .newsletter-text {
         padding-right: calc(((100% - 960px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .newsletter .newsletter-text  {
+    .newsletter .newsletter-text {
         padding-right: calc(((100% - 1140px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .newsletter .newsletter-text  {
+    .newsletter .newsletter-text {
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
 
 
 /*** Footer ***/
+
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 10px;
     padding: 0;
     text-align: left;
-    color: rgba(255,255,255,.5);
+    color: rgba(255, 255, 255, .5);
     font-weight: normal;
     transition: .3s;
 }
@@ -444,7 +457,7 @@
 }
 
 .footer .copyright a {
-    color: rgba(255,255,255,.5);
+    color: rgba(255, 255, 255, .5);
 }
 
 .footer .copyright a:hover {
