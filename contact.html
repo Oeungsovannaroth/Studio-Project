@@ -108,7 +108,7 @@
                 <div class="col-lg-7">
                     <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done.</p>
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <form>
+                        <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="feadback" style="height: 150px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
@@ -139,6 +139,7 @@
                                 </div>
                             </div>
                         </form>
+                        <p id="status"></p>
                     </div>
                 </div>
             </div>
@@ -245,7 +246,35 @@
     <!-- Back to Top -->
     <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
 
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const feadback = document.getElementById("feadback").value;
+
+            const telegramMessage = `New Contact Message:%0A
+👤 Name: ${name}%0A
+📧 Email: ${email}%0A
+💬 Subject: ${subject}%0A
+📝 Feadback:${feadback}`;
+
+            const BOT_TOKEN = "8381888400:AAEFOZ6OtLH1kWCEoM4h-ap8BXHENHEWVFs";
+            const CHAT_ID = "1369212693";
+
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${telegramMessage}`, {
+                    method: "GET"
+                })
+                .then(() => {
+                    document.getElementById("status").innerText = "Message sent successfully!";
+                })
+                .catch(() => {
+                    document.getElementById("status").innerText = "Failed to send message!";
+                });
+        });
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
